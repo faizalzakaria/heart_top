@@ -22,8 +22,7 @@ module HeartTop
         end
         set_defaults
         print_details
-        execute!
-        true
+        execute
       end
 
       private
@@ -40,7 +39,7 @@ module HeartTop
         '/tmp/hearttop.log'
       end
 
-      def start!
+      def start
         options = {
           interval: @interval,
           verbose: @verbose
@@ -52,7 +51,7 @@ module HeartTop
         end
       end
 
-      def stop!
+      def stop
         Dante::Runner
           .new('hearttop')
           .execute(kill: true, pid_path: pid_path)
