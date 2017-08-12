@@ -33,6 +33,14 @@ $ hearttop stop
 $ hearttop -h
 ```
 
+### Supported Plugins
+
+- [x] Slack
+
+```sh
+$ SLACK_WEBHOOK_URL=http://slack.com/xxx hearttop start
+```
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/faizalzakaria/heart_top.
