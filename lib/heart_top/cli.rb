@@ -27,8 +27,9 @@ module HeartTop
 
       private
 
-      def execute!
-        send("#{@command}!")
+      def execute
+        puts Rainbow("Executing #{@command} ...").green
+        send("#{@command}")
       end
 
       def pid_path
@@ -37,6 +38,11 @@ module HeartTop
 
       def log_path
         '/tmp/hearttop.log'
+      end
+
+      def restart
+        stop
+        start
       end
 
       def start
@@ -72,8 +78,9 @@ module HeartTop
           case opt
           when '--help'
             print_help
+            exit(0)
           when '--interval'
-            @interval = arg
+            @interval = arg.to_i
           when '--verbose'
             @verbose = true
           end
@@ -84,7 +91,7 @@ module HeartTop
       end
 
       def supported_commands?(cmd)
-        cmd.nil? || %w[stop start].include?(cmd)
+        cmd.nil? || %w[stop start restart].include?(cmd)
       end
 
       def print_details
@@ -109,7 +116,7 @@ module HeartTop
            --interval [interval], -i [interval]:
              interval, e.g: 10 (in seconds)
 
-      EOF
+        EOF
       end
     end
   end
