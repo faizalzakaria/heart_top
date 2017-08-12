@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.name          = "heart_top"
   spec.version       = HeartTop::VERSION
   spec.authors       = ["Faizal Zakaria"]
-  spec.email         = ["phaibusiness@gmail.com"]
+  spec.email         = ["fzakaria@codegarage.co"]
 
   spec.summary       = %q{HeartTop pings the heartbeat of your laptop every N seconds}
   spec.description   = "Have you ever go to free space, coffee shops or some random place to work, \
