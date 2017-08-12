@@ -5,7 +5,6 @@ RSpec.describe HeartTop do
     expect(HeartTop::VERSION).not_to be nil
   end
 
-  it "does something useful" do
-    expect(false).to eq(true)
-  end
+  it { expect(HeartTop::CLI.send('start')).to eq(true) }
+  it { expect(HeartTop::CLI.send('stop')).to eq(true) }
 end

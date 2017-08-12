@@ -26,4 +26,7 @@ This tool could be the solution"
   spec.add_development_dependency "bundler", "~> 1.15"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.0"
+  spec.add_dependency "terminal-table", "~> 1.8.0"
+  spec.add_dependency "rainbow", "~> 2.2.2"
+  spec.add_dependency "dante", "~> 0.2.0"
 end
