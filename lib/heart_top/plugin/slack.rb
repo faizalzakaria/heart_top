@@ -1,11 +1,31 @@
+# frozen_string_literal: true
+
+require 'heart_top/plugin/base'
+require 'singleton'
+require 'json'
+
 module HeartTop
   module Plugin
-    class Slack
-      class << self
-        def ping
-          puts 'test'
-          `curl -X POST --data-urlencode 'payload={"channel": "#hearttop", "username": "hearttop", "text": "This is posted to #hearttop and comes from a bot named hearttop.", "icon_emoji": ":ghost:"}' https://hooks.slack.com/services/<key>`
-        end
+    class Slack < Base
+      include Singleton
+
+      def ping
+        `curl -X POST --data-urlencode 'payload=#{payload}' #{webhook_url}`
+      end
+
+      private
+
+      def payload
+        {
+          channel: '#hearttop',
+          username: 'hearttop',
+          text: 'This is posted to #hearttop and comes from a bot named hearttop.',
+          icon_emoji: ':ghost:'
+        }.to_json.to_s
+      end
+
+      def webhook_url
+        ENV['SLACK_WEBHOOK_URL']
       end
     end
   end

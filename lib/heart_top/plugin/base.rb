@@ -1,9 +1,15 @@
-class HeartTop::Plugin::Base
-  class NotImplementedError < StandardError; end
+# frozen_string_literal: true
 
-  class << self
-    def ping
-      raise NotImplementedError.new "`##{__method__}` must be implemented in subclass"
+# Base Plugin class
+# Inherit this class if you adding a new plugin
+module HeartTop
+  module Plugin
+    class Base
+      class NotImplementedError < StandardError; end
+
+      def ping
+        raise NotImplementedError, "`##{__method__}` must be implemented in subclass"
+      end
     end
   end
 end

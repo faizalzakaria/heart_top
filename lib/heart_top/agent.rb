@@ -1,26 +1,30 @@
+# frozen_string_literal: true
+
 require 'heart_top/plugin'
 
-class HeartTop::Agent
-  PLUGINS = %i(slack)
+module HeartTop
+  class Agent
+    PLUGINS = %i[slack].freeze
 
-  def initialize(interval: , verbose: )
-    @interval = interval
-    @verbose  = verbose
-  end
-
-  def run
-    while true do
-      execute_plugins
-      sleep @interval
+    def initialize(interval:, verbose:)
+      @interval = interval
+      @verbose  = verbose
     end
-  end
 
-  private
+    def run
+      loop do
+        execute_plugins
+        sleep @interval
+      end
+    end
 
-  def execute_plugins
-    puts 'executing ...' if @verbose
-    PLUGINS.each do |plugin|
-      Object.const_get("HeartTop::Plugin::#{plugin.capitalize}").send('ping')
+    private
+
+    def execute_plugins
+      puts 'executing ...' if @verbose
+      PLUGINS.each do |plugin|
+        Object.const_get("HeartTop::Plugin::#{plugin.capitalize}").instance.send('ping')
+      end
     end
   end
 end

@@ -1,0 +1,26 @@
+AllCops:
+  Exclude: []
+  TargetRubyVersion: 2.3
+
+Bundler/OrderedGems:
+  Enabled: false
+
+Metrics/BlockLength:
+  Exclude:
+    - '*.gemspec'
+    - 'spec/**/*'
+
+Metrics/LineLength:
+  Max: 130
+  Exclude:
+    - '*.gemspec'
+    - 'spec/**/*'
+
+Metrics/MethodLength:
+  Max: 120
+
+Metrics/AbcSize:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
