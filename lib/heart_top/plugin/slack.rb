@@ -1,4 +1,4 @@
-# -*- coding: undecided -*-
+# -*- coding: utf-8 -*-
 # frozen_string_literal: true
 
 require 'heart_top/plugin/base'
@@ -20,8 +20,8 @@ module HeartTop
         {
           channel: '#hearttop',
           username: 'hearttop',
-          text: " ❤ #{Time.now}",
-          icon_emoji: ':ghost:'
+          text: " ❤  --  #{Time.now}",
+          icon_emoji: ':zzz:'
         }.to_json.to_s
       end
 
