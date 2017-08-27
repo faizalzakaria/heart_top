@@ -8,7 +8,7 @@ To those who work in Coffee Shop, or some random space, have you ever felt the u
 
 HeartTop was born from my frustration working remotely in a random space alone. No one to keep an eye on my laptop. Because I'm paranoid enough to leave my laptop unattended.
 
-So I figured, maybe I should have something that constantly pinging my laptop's heartbeat, while leaving it unattended. So here it is.
+So I figured, maybe I should have something that constantly pinging my laptop's heartbit, while leaving it unattended. So here it is.
 
 To those who work at Coffee shop, co working space, or random space out there, if you ever feel this, maybe HeartTop could help you out.
 
